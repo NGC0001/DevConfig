@@ -1,0 +1,16 @@
+## Custom shell configuration.
+
+################################
+########## Aliases #############
+alias diff='diff --color=auto'
+alias l='ls -lFh'
+alias la='ls -ACF'
+alias ll='ls -alF'
+alias lt='ls -lFhcrt'
+alias llt='ls -alFhcrt'
+alias nv='nvim'
+################################
+
+# If want zsh to include hostname in prompt,
+# consider add %M or %m to $PROMPT.
+# Oh-My-Zsh theme files are located in '~/.oh-my-zsh/themes/'.

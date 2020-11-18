@@ -1,0 +1,36 @@
+#!/bin/env bash
+
+# Run a container from an image.
+docker run -it \
+           --name container_name --rm \
+           --privileged \
+           --gpus all \
+           --network bridge --hostname container_hostname \
+           --mount type=bind,src="/path/on/host",target="/path/in/container" \
+           --workdir /home/username \
+           -u uid:gid \
+           image_name
+# -v :: mount volumes
+
+# # Start a exited container.
+# docker start -ai container_name
+
+# # Attatch to a running container.
+# docker attach container_name
+
+# # docker cp :: copy files between container and host.
+
+# # Stop a running contaner.
+# docker stop container_name
+
+# # Commit a container to an image.
+# docker commit -a "commit message" container_name image_name:tag
+
+# # Registry manipulation.
+# docker login REGISTRY_HOSTNAME --username USERNAME --password PASSWORD
+# docker push image_name:tag
+# docker logout && rm ${HOME}/.docker/config.json
+
+##  References:
+##  docker engine installation: https://docs.docker.com/engine/install/ubuntu/
+##  docker reference: https://docs.docker.com/reference/

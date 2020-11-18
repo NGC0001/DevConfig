@@ -1,0 +1,2 @@
+# File mode: 440
+user_name	ALL=(ALL:ALL) NOPASSWD: ALL

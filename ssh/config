@@ -1,0 +1,11 @@
+# https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing
+# ssh -O stop -S CONTROL_PATH REMOTE_HOST
+# ssh -O exit -S CONTROL_PATH REMOTE_HOST
+Host *
+  ControlPersist yes
+  ControlMaster auto
+  ControlPath ~/.ssh/controlmasters/master-%r@%h:%p
+
+# https://patrickmn.com/aside/how-to-keep-alive-ssh-sessions
+Host *
+  ServerAliveInterval 300
