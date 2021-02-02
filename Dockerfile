@@ -40,6 +40,8 @@ RUN locale-gen en_US.utf8 && \
 RUN apt update -y && \
     apt install -y --no-install-recommends \
     sudo \
+    locate \
+    tldr \
     curl \
     wget \
     git \
@@ -51,6 +53,8 @@ RUN apt update -y && \
     tmux \
     vim \
     neovim \
+    # ctags: https://andrew.stwrt.ca/posts/vim-ctags/ \
+    exuberant-ctags \
     openssh-server \
     zsh \
     && rm -rf /var/lib/apt/lists/*
@@ -122,6 +126,7 @@ RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip && \
 RUN pip3 install \
     wheel \
     setuptools \
+    ipdb \
     clang-format \
     yapf \
     cpplint \
@@ -167,6 +172,7 @@ RUN mkdir -p ${HOME}/.ipython && \
 # Setup git.
 RUN git config --global user.name "${CONFIG_USER_NAME}" && \
     git config --global user.email "${CONFIG_USER_NAME}@noreply.com" && \
+    git config --global pager.branch false && \
     git config --global alias.lgd "log --graph --branches --pretty=format:'%C(yellow)%h%Creset %Cgreen%an%Creset %s %Cred%D%Creset%n'"
 
 # Install oh-my-zsh and plugins.
@@ -177,6 +183,8 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.
     sed -i 's/\(^plugins=(\)\(.*\))/\1\2 zsh-autosuggestions)/' ${HOME}/.zshrc
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
     sed -i 's/\(^plugins=(\)\(.*\))/\1\2 zsh-syntax-highlighting)/' ${HOME}/.zshrc
+# TODO: Disable OMZ auto update
+# TODO: Modify zsh key binding: bindkey \^U backward-kill-line
 
 # Configure shell.
 COPY --chown=${CONFIG_USER_NAME}:${CONFIG_USER_NAME} shell-config /tmp/shell-config
