@@ -240,3 +240,6 @@ WORKDIR /home/${CONFIG_USER_NAME}
 # Use zsh as the entry point.
 ENTRYPOINT ["/usr/bin/zsh"]
 CMD []
+
+# How to merge docker image layers:
+# https://stackoverflow.com/questions/22713551/how-to-flatten-a-docker-image
