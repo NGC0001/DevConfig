@@ -8,7 +8,7 @@ alias la='ls -ACF'
 alias ll='ls -alF'
 alias lt='ls -lFhcrt'
 alias llt='ls -alFhcrt'
-alias nv='nvim'
+alias vi='nvim'
 ################################
 
 # If want zsh to include hostname in prompt,

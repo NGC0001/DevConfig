@@ -1,6 +1,6 @@
-FROM tensorflow/tensorflow:2.3.0-gpu
-# Some work around the primary image.
-# Remove broken GPG keys.
+FROM ubuntu:20.04
+
+# If there are broken GPG keys for cuda.
 RUN mv /etc/apt/sources.list.d/cuda.list /etc/apt/sources.list.d/cuda.list.bak && \
     mv /etc/apt/sources.list.d/nvidia-ml.list /etc/apt/sources.list.d/nvidia-ml.list.bak
 
@@ -57,6 +57,8 @@ RUN apt update -y && \
     exuberant-ctags \
     openssh-server \
     zsh \
+    ip \
+    ss \
     && rm -rf /var/lib/apt/lists/*
 
 # Install build tools.
@@ -68,7 +70,8 @@ RUN apt update -y && \
     make \
     cmake \
     && rm -rf /var/lib/apt/lists/*
-# Upgrade CMake
+# Upgrade CMake.
+# We may also use installation scripts available from the net.
 RUN wget -O cmake.tar.gz https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz && \
     tar zxf cmake.tar.gz --strip-components=1 -C /usr/local/ && \
     update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force && \

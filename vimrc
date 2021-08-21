@@ -8,13 +8,18 @@ syntax on
 " Refer to https://www.shortcutfoo.com/blog/top-50-vim-configuration-options/
 " for some common vim configurations.
 
-set tabstop=4           " Witdth of \t in documents.
-set softtabstop=4       " Withth of entered <tab>.
+set tabstop=2           " Witdth of \t in documents.
+set softtabstop=2       " Withth of entered <tab>.
 set expandtab           " Transform entered <Tab> into space characters.
 autocmd BufNewFile,BufRead GNUmakefile,makefile,Makefile set noexpandtab
 set autoindent
 set smartindent
-set shiftwidth=4        " Number of space characters inserted for indentation.
+set shiftwidth=2        " Number of space characters inserted for indentation.
+
+" ctrl-] : Enter the first tag entry.
+" g ] : List all tag entries.
+" g ctrl-] : Enter if there is only one tag entry, list all otherwise.
+set tags=tags;/         " Look for tags file through parent directories.
 
 set hlsearch
 set incsearch         " Incremental search
