@@ -61,9 +61,15 @@ endif
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'preservim/nerdcommenter'
-Plug 'tomtom/tcomment_vim'
+  Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'preservim/nerdcommenter'
+  Plug 'tomtom/tcomment_vim'
+  "
+  " Google format
+  " - https://github.com/google/vim-codefmt
+  Plug 'google/vim-maktaba'
+  Plug 'google/vim-codefmt'
+  Plug 'google/vim-glaive'
 call plug#end()
 
 " NERDTree configuration.
@@ -89,3 +95,18 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
+
+" google/vim-codefmt
+augroup autoformat_settings
+  " autocmd FileType bzl AutoFormatBuffer buildifier
+  " autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+  " autocmd FileType dart AutoFormatBuffer dartfmt
+  " autocmd FileType go AutoFormatBuffer gofmt
+  " autocmd FileType gn AutoFormatBuffer gn
+  " autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  " autocmd FileType java AutoFormatBuffer google-java-format
+  " " autocmd FileType python AutoFormatBuffer autopep8
+  " autocmd FileType python AutoFormatBuffer yapf
+  " autocmd FileType rust AutoFormatBuffer rustfmt
+  " autocmd FileType vue AutoFormatBuffer prettier
+augroup END
