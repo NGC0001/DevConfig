@@ -17,7 +17,7 @@ WORKDIR /tmp
 
 # Switch to Tsinghua apt source, and install apt-utils.
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
-COPY sources.list.ubuntu.18.04.tsinghua /etc/apt/sources.list
+COPY sources.list.ubuntu.20.04.tsinghua /etc/apt/sources.list
 RUN apt update -y && \
     apt install -y --no-install-recommends \
     apt-utils \
