@@ -9,7 +9,10 @@ alias ll='ls -alF'
 alias lt='ls -lFhcrt'
 alias llt='ls -alFhcrt'
 alias vi='nvim'
+alias gst="git status"
 ################################
+
+export EDITOR="vim"
 
 # If want zsh to include hostname in prompt,
 # consider add %M or %m to $PROMPT.

@@ -1,0 +1,1 @@
+runuser -u TARGET_USER sh SCRIPT_SH

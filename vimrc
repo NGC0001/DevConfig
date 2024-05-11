@@ -16,6 +16,8 @@ set autoindent
 set smartindent
 set shiftwidth=2        " Number of space characters inserted for indentation.
 
+" autocmd BufNewFile,BufRead /home/*.md set tabstop=4 softtabstop=4 shiftwidth=4
+
 " ctrl-] : Enter the first tag entry.
 " g ] : List all tag entries.
 " g ctrl-] : Enter if there is only one tag entry, list all otherwise.
@@ -40,7 +42,7 @@ set number
 set relativenumber
 " set cursorline        " Highlight the line currently under cursor.
 " set cursorcolumn      " Highlight the column currently under cursor.
-set colorcolumn=80
+set colorcolumn=80,100,120
 " highlight ColorColumn ctermbg=lightcyan guibg=blue
 highlight Comment ctermfg=blue
 set showmatch         " Show matching brackets.

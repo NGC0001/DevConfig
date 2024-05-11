@@ -21,6 +21,7 @@ COPY sources.list.ubuntu.20.04.tsinghua /etc/apt/sources.list
 RUN apt update -y && \
     apt install -y --no-install-recommends \
     apt-utils \
+    apt-file \
     && rm -rf /var/lib/apt/lists/*
 
 # Upgrade existing packages.
@@ -42,15 +43,18 @@ RUN apt update -y && \
     sudo \
     locate \
     tldr \
+    shellcheck \
     curl \
     wget \
     git \
+    git-man \
     less \
     unzip \
     zip \
     rename \
     rsync \
     tmux \
+    rlwrap \
     vim \
     neovim \
     # ctags: https://andrew.stwrt.ca/posts/vim-ctags/ \
