@@ -1,0 +1,28 @@
+{
+  "editor.fontFamily": "'Monaspace Argon', monospace",
+  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "git.openRepositoryInParentFolders": "never",
+  "redhat.telemetry.enabled": false,
+  "editor.rulers": [80, 100, 120],
+  "explorer.sortOrder": "mixed",
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 0,
+  "jupyter.askForKernelRestart": false,
+  "diffEditor.codeLens": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "C_Cpp.formatting": "clangFormat", // Microsoft C/C++ (ms-vscode.cpptools)
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.default.cStandard": "c17",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode"
+}
